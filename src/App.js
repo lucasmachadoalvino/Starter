@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component, Fragment } from 'react';
+import { ThemeProvider } from 'styled-components';
+// Rota
+import { BrowserRouter } from 'react-router-dom'
+import Main from './screens/Main';
+// Estilos
+import GlobalStyle from './commons/styles/global';
+import theme from './commons/styles/theme';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <Fragment>
+          <GlobalStyle />
+          <BrowserRouter>
+            <Main />
+          </BrowserRouter>
+        </Fragment>
+      </ThemeProvider>
+    );
+  }
 }
 
 export default App;
