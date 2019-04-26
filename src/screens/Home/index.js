@@ -12,7 +12,7 @@ class Home extends Component {
     return (
       <Container>
           <img src={rocket} alt="" />
-          <Title>Starting your project... test2</Title>
+          <Title>Starting your project... test</Title>
           <Title secondary>Stackoverflow developers</Title>
           <Btn>Components</Btn>
       </Container>
