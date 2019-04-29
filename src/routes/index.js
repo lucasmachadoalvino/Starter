@@ -1,7 +1,6 @@
-import Home from './home'
+import Home from './home';
+import Contato from './contato';
 
-const routes = [
-  ...Home
-]
+const routes = [...Home, ...Contato];
 
-export default routes
+export default routes;
