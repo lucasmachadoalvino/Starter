@@ -5,4 +5,12 @@ const StyledContainer = styled.div`
   height: 100%;
 `;
 
-export default StyledContainer;
+const StyledMain = styled.div`
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-direction: column;
+`;
+
+export { StyledContainer, StyledMain };

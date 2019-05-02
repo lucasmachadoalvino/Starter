@@ -17,6 +17,19 @@ const StyleMenuItem = styled.div`
   cursor: pointer;
   flex-direction: column;
   transition: all ease 0.25s;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 2px;
+    height: 0px;
+    transition: all ease 0.25s;
+    background: ${({ theme }) => theme.primaryColor};
+  }
   & > span {
     color: ${({ theme }) => theme.primaryColor};
     font-size: 14px;
@@ -25,12 +38,23 @@ const StyleMenuItem = styled.div`
     display: block;
     text-align: center;
     text-decoration: none;
+    transition: all ease 0.25s;
   }
   & > img {
+    transition: all ease 0.25s;
     margin-bottom: 15px;
   }
   &:hover {
-    opacity: 0.55;
+    opacity: 1;
+  }
+  &:hover > img {
+    transform: translateY(-5px);
+  }
+  &:hover > span {
+    transform: translateY(5px);
+  }
+  &:hover:before {
+    height: 100%;
   }
 `;
 
@@ -45,7 +69,10 @@ const StyleLogo = styled(StyleMenuItem)`
 const StyleLogout = styled(StyleMenuItem)`
   margin-top: auto;
   & > span {
-    color: #F05D28;
+    color: ${({ theme }) => theme.secondaryColor};
+  }
+  &:before {
+    background: ${({ theme }) => theme.secondaryColor};;
   }
 `;
 

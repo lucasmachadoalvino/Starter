@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import rocket from '../../assets/img/rocket.png';
-import { Title, Btn, Container } from './style';
+import { Container, Content } from './style';
+import Header from '../../components/Header';
+import Keyboard from '../../components/Keyboard';
 
 class Home extends Component {
   render() {
     return (
       <Container>
-        <img src={rocket} alt="" />
-        <Title>Starting your project... test</Title>
-        <Title secondary>Stackoverflow developers</Title>
-        <Btn>Components</Btn>
+        <Header
+          center
+          title="Terminal Livre"
+          subtitle="Informe uma comanda para abrir ou adicionar"
+        />
+        <Content>
+          <Keyboard />
+        </Content>
       </Container>
     );
   }

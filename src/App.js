@@ -7,6 +7,8 @@ import Main from './screens/Main';
 import GlobalStyle from './commons/styles/global';
 import theme from './commons/styles/theme';
 import './App.css';
+// Layout
+// import ContainerTeste from './commons/layout';
 
 class App extends Component {
   render() {
