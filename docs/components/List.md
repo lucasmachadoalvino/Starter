@@ -62,13 +62,13 @@ export default () => (
         <tr>
           <td>delete</td>
           <td>function</td>
-          <td>false</td>
+          <td></td>
           <td>Ícone e Callback para deletar item</td>
         </tr>
         <tr>
           <td>print</td>
           <td>function</td>
-          <td>false</td>
+          <td></td>
           <td>Ícone e Callback de imprimir item</td>
         </tr>
         <tr>
