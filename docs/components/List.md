@@ -1,10 +1,7 @@
-## React-tabs
+## List
 
-> Este é um componente de Tabs importado
+Componente geral de Lista atrelado ao conteúdo do projeto.
 
-https://reactcommunity.org/react-tabs/
-
-Componente de Tabs (Abas) ReactJS
 
 ### Basic Example
 
@@ -36,6 +33,7 @@ export default () => (
   />
 );
 ```
+
 
 ## Props
 
