@@ -5,8 +5,13 @@ module.exports = {
     "prettier"
   ],
   "plugins": [
-    "prettier"
+    "prettier",
+    "react"
   ],
+  "env": {
+    "node": true,
+    "browser": true
+  },
   "rules": {
     "prettier/prettier": [
       "error",
@@ -15,6 +20,10 @@ module.exports = {
         "trailingComma": "all",
       }
     ],
+    "react/require-default-props": "off",
+    "react/forbid-prop-type":  "off",
+    "react/prop-types":  "off",
+    "react/forbid-prop-types": "off",
     "react/prefer-stateless-function": "off",
     "react/jsx-filename-extension": "off",
     "no-use-before-define": "off",

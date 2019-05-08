@@ -6,16 +6,10 @@ const HeaderBar = styled.div`
   align-items: center;
   height: 60px;
   margin-top: 65px;
-  margin-bottom: 40px;
-  ${props => props.active && css`
-      background: blue;
-      & > ${HeaderTitle} {
-        color: red;
-      }
-    `}
+  margin-bottom: 40px
   ${props => props.center && css`
-      text-align: center;
-    `}
+        text-align: center;
+      `};
 `;
 
 const HeaderTitle = styled.h1`

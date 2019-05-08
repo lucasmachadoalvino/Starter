@@ -11,16 +11,18 @@ import {
   KeyboarButton,
 } from './style';
 
-document.addEventListener('keydown', function(e) {
-	let characters = String.fromCharCode(e.which);
-	if((/[0-9, a-i, `, ]/.test(characters))) {
-			document.getElementById("input").focus();
-	} else if((!/[0-9]/.test(characters))) {
-  	e.preventDefault();
-  }
-});
-
 class Keyboard extends Component {
+  componentDidMount() {
+    document.addEventListener('keydown', function(e) {
+      let characters = String.fromCharCode(e.which);
+      if((/[0-9, a-i, `, ]/.test(characters))) {
+          document.getElementById("input").focus();
+      } else if((!/[0-9]/.test(characters))) {
+        e.preventDefault();
+      }
+    });
+  }
+
   render() {
     return (
       <KeyboardContainer>

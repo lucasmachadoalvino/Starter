@@ -9,21 +9,7 @@ const KeyboardContainer = styled.div`
 
 const KeyboardInput = styled.input`
   margin: 5px 5px 10px 5px;
-  height: 80px;
-  border-radius: 10px;
-  border: solid 1px ${({ theme }) => theme.palette.border.main};
-  outline: none;
-  padding: 0 60px 0 25px;
-  box-sizing: border-box;
-  font-size: 20px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
   background: url(${IconInput}) right 25px center no-repeat;
-  &::placeholder {
-    color: ${({ theme }) => theme.palette.secondary.light};
-    font-size: 16px;
-    font-weight: 500;
-  }
 `;
 
 const KeyboardContent = styled.div`

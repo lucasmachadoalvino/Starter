@@ -1,11 +1,19 @@
-import styled, { css } from 'styled-components';
+import React, { Component } from 'react';
+import { Section, Container, Content, Aside, Footer } from './style';
 
-const ContainerTeste = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  width: 100%;
-  background: red;
-`;
+class Layout extends Component {
+  render() {
+    const { children, aside, footer } = this.props;
+    return (
+      <Section>
+        <Container>
+          <Content>{children}</Content>
+          {aside && <Aside active>{aside}</Aside>}
+        </Container>
+        {footer && <Footer>{footer}</Footer>}
+      </Section>
+    );
+  }
+}
 
-export default ContainerTeste;
+export default Layout;

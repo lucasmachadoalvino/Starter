@@ -3,35 +3,14 @@ import {
   Tab as UnstyledTab,
   TabList as UnstyledTabList,
   Tabs as UnstyledTabs,
-  TabPanel as UnstyledTabPanel
+  TabPanel as UnstyledTabPanel,
 } from 'react-tabs';
-
-const Container = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  width: 100%;
-  ${props => props.center && css`
-      background: #EFF2F8;
-    `}
-`;
-
-const Content = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  ${props => props.center && css`
-      background: #EFF2F8;
-    `}
-`;
 
 const Tabs = styled(UnstyledTabs)`
   display: flex;
   flex: 1;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 const TabList = styled(UnstyledTabList)`
@@ -54,12 +33,23 @@ const Tab = styled(UnstyledTab).attrs({
   cursor: pointer;
   margin-left: 40px;
   position: relative;
-  color: #99A5B8;
+  color: ${({ theme }) => theme.palette.secondary.light};
   outline: none;
+  transition: all ease 0.15s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > img {
+    margin-right: 12px;
+  }
 
   &.selected {
-    color: #000000;
+    color: ${({ theme }) => theme.palette.primary.dark};
     border-bottom: none;
+    & > img {
+      filter: grayscale(100%) brightness(0%);
+    }
     &:before {
       content: '';
       width: 100%;
@@ -67,22 +57,28 @@ const Tab = styled(UnstyledTab).attrs({
       position: absolute;
       left: 0;
       bottom: -10px;
-      background: linear-gradient( to right, #FF5A20, #FFA009 );
-      box-shadow: 0 3px 8px 0px rgba(213,91,44,.55);
+      background: linear-gradient(
+        to right,
+        ${({ theme }) => theme.palette.background.lineardark},
+        ${({ theme }) => theme.palette.background.linearlight}
+      );
+      box-shadow: 0 3px 8px 0px ${({ theme }) => theme.palette.boxshadow.main};
     }
   }
 
   &.disabled {
-    color: #99A5B8;
+    color: #99a5b8;
     cursor: not-allowed;
   }
 `;
 
-const TabPanel = styled(UnstyledTabPanel).attrs({ selectedClassName: 'selected' })`
+const TabPanel = styled(UnstyledTabPanel).attrs({
+  selectedClassName: 'selected',
+})`
   display: none;
-  padding: 10px 20px;
+  width: 100%;
   &.selected {
-    display: block;
+    display: flex;
   }
 `;
 
@@ -91,5 +87,4 @@ Tabs.tabsRole = 'Tabs';
 TabPanel.tabsRole = 'TabPanel';
 TabList.tabsRole = 'TabList';
 
-
-export { Container, Content, Tab, TabList, Tabs, TabPanel }
+export { Tab, TabList, Tabs, TabPanel };
