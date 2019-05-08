@@ -11,7 +11,7 @@ const Exemplo = () => <Button>Exemplo de botão</Button>
 
 ```
 
-## Icon Example
+### Icon Example
 
 ```js
 import IconBtPrint from '../../assets/img/bt-ic-print.png';

@@ -10,9 +10,9 @@ import {
 
 class Header extends Component {
   render() {
-    const { title, subtitle, children, back, center, aside } = this.props;
+    const { title, subtitle, children, back, center } = this.props;
     return (
-      <HeaderBar aside={aside} center={center}>
+      <HeaderBar center={center}>
         {back && (
           <HeaderBack onClick={back}>
             <img src={IconBack} alt="" />
